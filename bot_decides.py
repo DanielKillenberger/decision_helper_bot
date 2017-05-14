@@ -24,12 +24,12 @@ def roll_error_response(bot, update):
 
 
 def roll_response(bot, update, n):
-    number = random_roll(n)
+    number = random_roll(1, n)
     answer(bot, update, 'Roll between 1-{n}: {number}'.format(**locals()))
 
 
-def random_roll(n):
-    return random.randint(0, n)
+def random_roll(s, n):
+    return random.randint(s, n)
 
 
 def start(bot, update):
@@ -59,7 +59,7 @@ def choose(bot, update):
 
     if len(message) > 0:
         choices = message.split(',')
-        i = random_roll(len(choices)-1)
+        i = random_roll(0, len(choices)-1)
         response = "Choices: \n"
         for choice in choices:
             response += '{choice} \n'.format(**locals())
