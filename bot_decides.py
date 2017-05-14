@@ -48,7 +48,6 @@ def roll(bot, update):
         if n < 2:
             roll_error_response(bot, update)
         else:
-            number = random_roll(n)
             roll_response(bot, update, n)
     else:
         roll_response(bot, update, 10)
