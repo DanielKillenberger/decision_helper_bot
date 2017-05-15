@@ -19,7 +19,7 @@ def answer(bot, update, message):
 
 def roll_error_response(bot, update):
     answer(bot, update, 'Without parameters: Ask for a roll between 1-10 \n'
-                        'With integer n > 2 as a parameter:\n'
+                        'With integer n > 1 as a parameter:\n'
                         'Roll between 1-n')
 
 
@@ -34,8 +34,8 @@ def random_roll(s, n):
 
 def start(bot, update):
     answer(bot, update, 'You can roll random numbers with /roll n where n is an optional integer parameter'
-                        ' that has to be bigger than 2.\n'
-                        'You can choose between multiple options by entering /choose option1, option2, ... optionN\n')
+                        ' that has to be larger than 1.\n'
+                        'You can choose between N options by entering /choose option1, option2, ... optionN\n')
 
 
 def roll(bot, update):
