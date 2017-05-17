@@ -54,10 +54,11 @@ def roll(bot, update):
 
 
 def choose(bot, update):
-    message = update.message.text.replace("/choose", "").replace(" ", "").strip()
+    message = update.message.text.replace("/choose", "").strip()
 
     if len(message) > 0:
         choices = message.split(',')
+        choices = [choice.lstrip() for choice in choices]
         i = random_roll(0, len(choices)-1)
         response = "Choices: \n"
         for choice in choices:
